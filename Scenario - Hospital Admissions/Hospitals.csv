@@ -1,0 +1,6 @@
+﻿facid,Name,Beds,Specialities,Avg_rating,Annual_patients,Established
+A,North Valley General,150,"Cardiology, Neurology, Pediatrics",4.3,"25,000",1987
+B,Riverside Medical,200,"Orthopedics, Gastroenterology",4.6,"30,000",1995
+C,Oceanview Hospital,120,"Oncology, Cardiology, Pediatrics",4.5,"20,000",2002
+D,West Town Health,80,"Sports Medicine, Neurology",4.4,"10,000",2010
+E,Sunset Lakes Hospital,180,"Cardiology, Emergency Medicine",4.2,"28,000",1990
