@@ -1,118 +1,89 @@
-Data Technician
-Company: Just Money (UK-based financial company)
-Objective: Your line manager has asked you to extract, clean, format and present data using appropriate tools for analysis.
+# Just Money Ltd – Data Technician Project
 
-📁 Data Files Provided
-You will be using the following two CSV files:
+## Scenario
 
-Loan Data.csv – Contains latest loan requests.
+You are a **Data Technician** at *Just Money*, a UK-based financial company.  
+Your line manager has asked you to complete a data analysis task involving two datasets.
 
-Personal Data.csv – Contains personal details of applicants.
+You are expected to:
 
-✅ Tasks 1–10: Step-by-Step Guide with Tips
-Task 1: Merge Selected Columns
-Import the following from Personal Data.csv into Loan Data.csv:
+- Extract and merge data from multiple sources
+- Remove any corrupted or incomplete records
+- Format the data for presentation
+- Present the data both as a table and as a visual chart
 
-Gender, Married, Dependant, Education, Self-employed
+---
 
-Match using the shared ID (e.g., Applicant_ID)
+## Data Files
 
-Use Excel’s VLOOKUP or XLOOKUP
+You have been provided with two CSV files:
 
-Rename the final sheet: Loan Request Data
+- `Loan Data.csv` – Contains loan request information
+- `Personal Data.csv` – Contains personal details of applicants
 
-✅ Tip: Check that the column headers are the same in both files.
+---
 
-Task 2: Format Currency
-Format Applicant Income and Loan Amount:
+## Tasks
 
-Currency
+### Task 1: Merge Selected Columns
 
-2 decimal places
+- Import the following columns from `Personal Data.csv` into `Loan Data.csv`:
+  - `Gender`
+  - `Married`
+  - `Dependant`
+  - `Education`
+  - `Self-employed`
+- Use a shared ID field (e.g., `Applicant_ID`) for matching
+- Use `VLOOKUP` or `XLOOKUP` to join the datasets
+- Save the new combined worksheet as:  
+  `Loan Request Data`
 
-Use Format Cells > Currency
+> Tip: Make sure column names match exactly in spelling and capitalisation.
 
-✅ Tip: Make sure the data is stored as numbers (not text).
+---
 
-Task 3: Remove Blank Records
-Delete any rows with missing values in any column
+### Task 2: Format Currency Columns
 
-Use filters or conditional formatting to identify blanks
+- Format the following as **currency with two decimal places**:
+  - `Applicant Income`
+  - `Loan Amount`
 
-✅ Tip: Save a backup before making changes!
+Steps:
 
-Task 4: Format Table for Presentation
-Add the following:
+1. Select the column
+2. Right-click → Format Cells
+3. Choose **Currency** with **2 decimal places**
 
-Bold headers
+---
 
-Gridlines and borders
+### Task 3: Remove Blank Records
 
-Highlight key values or totals
+- Identify and delete any rows that contain blank cells
+- Use filters or conditional formatting in Excel to highlight blanks
 
-✅ Tip: Use Excel’s Table Design tools for a clean look.
+> Tip: Back up your file before deleting anything.
 
-Task 5: Add Monthly Payment Column
-Insert a new column next to Loan Amount Term
+---
 
-Name it: Monthly Payment
+### Task 4: Apply Table Formatting
 
-Format the column (e.g. currency, bold header)
+- Format the table for clear presentation:
+  - Bold column headers
+  - Apply gridlines and borders
+  - Adjust column widths as needed
+  - Highlight key values or totals if relevant
 
-Task 6: Calculate Monthly Payment
-Formula:
+---
 
-graphql
-Copy
-Edit
-=IFERROR([@LoanAmount]/[@Loan_Amount_Term], "")
-✅ Tip: Use structured references if using Excel Table format.
+### Task 5: Add a New Column
 
-Task 7: Count Gender Breakdown
-In O2: Count Male applicants
-=COUNTIF([Gender Range], "Male")
+- Insert a new column next to `Loan Amount Term`
+- Name the column: `Monthly Payment`
+- Format the header (bold) and cells (currency)
 
-In O3: Count Female applicants
-=COUNTIF([Gender Range], "Female")
+---
 
-✅ Tip: Ensure spelling and capitalisation match exactly.
+### Task 6: Add Monthly Payment Formula
 
-Task 8: Create a Chart
-Show total loan amounts for married male and married female applicants
-
-Filter data:
-
-Married = Yes
-
-Gender = Male or Female
-
-Use a Pivot Table to summarise
-
-Create a Bar or Column Chart from that Pivot Table
-
-Task 9: Write a Summary
-Place below your chart
-
-Keep it brief and focused:
-
-Mention trends, comparisons, or standout values
-
-Use bullet points or a 2–3 sentence paragraph
-
-Task 10: Save Final File
-Save with a clear filename:
-e.g. Loan_Request_Analysis_Complete.xlsx
-
-Ensure:
-
-All charts and formatting are preserved
-
-Pivot Charts remain linked to their data
-
-📝 Final Tips
-Double-check formulas for accuracy
-
-Keep formatting clean and professional
-
-Make sure everything is readable at a glance
+In the new `Monthly Payment` column, calculate:
 
