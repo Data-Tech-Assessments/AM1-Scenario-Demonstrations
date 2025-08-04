@@ -87,3 +87,86 @@ Steps:
 
 In the new `Monthly Payment` column, calculate:
 
+=IFERROR([@LoanAmount]/[@Loan_Amount_Term], "")
+
+yaml
+Copy
+Edit
+
+> Tip: Use structured references if you're working within a formatted Excel Table.
+
+---
+
+### Task 7: Count Applicants by Gender
+
+In cells outside your table (e.g., `O2` and `O3`):
+
+O2: =COUNTIF([Gender Range], "Male")
+O3: =COUNTIF([Gender Range], "Female")
+
+yaml
+Copy
+Edit
+
+Make sure spelling and capitalisation match your dataset.
+
+---
+
+### Task 8: Create a Chart
+
+Create a visual chart showing total loan amounts for:
+
+- Married Male applicants
+- Married Female applicants
+
+Steps:
+
+1. Filter dataset: `Married = Yes`
+2. Use a Pivot Table to summarise loan amounts by `Gender`
+3. Insert a Bar Chart or Column Chart
+
+---
+
+### Task 9: Write a Summary
+
+Below the chart, write a brief summary of what the chart shows. Example points:
+
+- Which gender requested higher loans
+- Any trends between marital status and loan amounts
+- Any outliers or interesting patterns
+
+Use a short paragraph or bullet points.
+
+---
+
+### Task 10: Save the Completed File
+
+Save your final file with a clear name:
+
+Loan_Request_Analysis_Complete.xlsx
+
+markdown
+Copy
+Edit
+
+Make sure:
+
+- Charts are still connected to data
+- Formatting is preserved
+- No filters or error messages remain
+
+---
+
+## Final Checklist
+
+Use this to confirm your work before submitting:
+
+- [ ] Personal data successfully merged with loan data  
+- [ ] Currency columns correctly formatted  
+- [ ] Blank records removed  
+- [ ] Table visually formatted  
+- [ ] Monthly payment column added and calculated  
+- [ ] Gender counts calculated  
+- [ ] Chart created for married male/female loan amounts  
+- [ ] Summary written  
+- [ ] Final file saved correctly
