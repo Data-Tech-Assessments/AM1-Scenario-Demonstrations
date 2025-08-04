@@ -2,85 +2,73 @@
 
 ## Overview
 
-You are provided with a Titanic dataset that includes:
+You are provided with three data files:
 
-- A **Comments** tab explaining column names
-- A **Passengers** tab with the data itself
+- `Happiness_data_2018.csv` – Happiness data for 2018
+- `Happiness_data_2019.csv` – Happiness data for 2019
+- `Population_data.csv` – Population by country
 
-Your task is to import, validate, and clean the data to prepare it for analysis.
+Each happiness file includes:
+
+- Country name
+- Happiness score
+- GDP per capita
+- Social support
+- Healthy life expectancy
+- Freedom to make life choices
+- Generosity
+- Perceptions of corruption
+
+Your goal is to prepare a clean and combined dataset for analysis.
 
 ---
 
 ## Tasks
 
-### Task 1: Import the Data
+### Task 1: Import All Files
 
-- Import the **Passengers** tab using your preferred tool (e.g. Excel, Power BI, Python, etc.)
-- Review the **Comments** tab to understand the data structure and column meanings
+- Import all three CSV files using your preferred tool (e.g. Excel, Power BI, Python, etc.)
+- Check for consistent column headers and data formats
 
 ---
 
 ### Task 2: Validate the Data
 
-Check for:
+For each dataset:
 
-- Errors (e.g. negative ages, typos)
-- Inconsistencies in formats or values
-- Incorrect data types (e.g. text in numeric fields)
+- Check for:
+  - Errors or typos in country names or metrics
+  - Inconsistencies in column names between 2018 and 2019 files
+  - Duplicates or null (missing) values
 
-> Tip: Use filters, sorting, and data profiling tools to identify issues.
+> Tip: Use sorting, filters, and data validation tools to assist in error checking.
 
 ---
 
-### Task 3: Clean the Dataset
+### Task 3: Merge Happiness Data
 
-Make the following changes:
+- Combine `Happiness_data_2018` and `Happiness_data_2019` into one dataset
+- Include a column to indicate the year for each row
+- Ensure all variables are consistently named and formatted
 
-1. **Rename Columns**:
-   - Rename `Sex` to `Gender`
-   - Rename `Pclass` to `Passenger Class`
+---
 
-2. **Split Name Column**:
-   - Extract `Title`, `First names`, and `Last names` from the `Name` column
-   - Example: `Mr. John Smith` → `Title = Mr.`, `First names = John`, `Last names = Smith`
+### Task 4: Link Population Data
 
-3. **Create Survival Column**:
-   - Add a new column called `Survival`
-   - Use logic:
-     - If `Survived = 1`, then `Survival = Survived`
-     - If `Survived = 0`, then `Survival = Died`
-
-4. **Add Family Size Column**:
-   - Use formula:
-     ```
-     Family Size = SibSp + Parch + 1
-     ```
-
-5. **Replace Embarked Values**:
-   - Replace:
-     - `S` with `Southampton`
-     - `C` with `Cherbourg`
-     - `Q` with `Queenstown`
-
-6. **Remove Unused Columns**:
-   - Delete the following:
-     - `Ticket`
-     - `Cabin`
-
-7. **Remove Rows with Null Values**:
-   - Drop any rows containing missing values in any column
+- Join the population data to the merged happiness dataset
+- Use the country name as the key
+- Ensure each country in the happiness dataset includes its correct population value
 
 ---
 
 ## Final Checks
 
-- [ ] Columns renamed correctly  
-- [ ] Name column split accurately  
-- [ ] Survival and Family Size columns added  
-- [ ] Embarked codes replaced  
-- [ ] Unused columns removed  
-- [ ] All null rows removed  
-- [ ] File saved, e.g. `Titanic_Cleaned.xlsx`
+- [ ] All three files imported  
+- [ ] Column names standardised  
+- [ ] Errors, inconsistencies, and duplicates resolved  
+- [ ] Happiness data merged with year column  
+- [ ] Population data successfully linked  
+- [ ] Final file saved as e.g. `Happiness_Population_Combined.xlsx`
 markdown
 Copy
 Edit
@@ -88,57 +76,79 @@ Edit
 
 ## Overview
 
-Now that the Titanic dataset has been cleaned, perform the following analysis to explore patterns and insights, especially related to survival.
+Using the cleaned and combined dataset from Scenario 1, perform analysis to explore happiness trends and relationships with other factors.
 
 ---
 
 ## Tasks
 
-### Task 1: General Statistics
+### Task 1: Compare 2018 vs 2019 Happiness Scores
 
-1. **Average Age**:
-   - Calculate the average age of all passengers
+- For each country, calculate the difference in happiness score between 2018 and 2019
+- Identify countries with:
+  - Increased happiness
+  - Decreased happiness
 
-2. **Highest Fare**:
-   - Identify the passengers who paid the highest fare
-
-3. **Embarkation Percentages**:
-   - Calculate the percentage of passengers who embarked from:
-     - Southampton
-     - Cherbourg
-     - Queenstown
+> Tip: Use a calculated column or a Pivot Table for year-over-year comparison
 
 ---
 
-### Task 2: Explore Patterns in Survival
+### Task 2: Average Happiness Rating
 
-Use charts, tables, or summary statistics to explore the relationship between survival and:
+- Calculate the **overall average happiness score** for all countries
+- Compare this average to the **United Kingdom’s** score for both years
 
-1. **Family Size**:
-   - Compare survival rates across different family sizes
-   - Use bar charts or grouped statistics
+---
 
-2. **Passenger Class**:
-   - Compare survival by `Passenger Class` (1st, 2nd, 3rd)
-   - Consider stacked bar charts or pivot tables
+### Task 3: G7 Country Comparison
 
-3. **Gender**:
-   - Compare survival rates for male and female passengers
+- Identify the following countries:
+  - Canada
+  - France
+  - Germany
+  - Italy
+  - Japan
+  - United Kingdom
+  - United States
 
-4. **Age**:
-   - Create age groups or use a histogram to compare age vs. survival
-   - Look for trends (e.g. were children more likely to survive?)
+- Calculate the **average happiness score** for G7 countries
+- Compare with global averages
+
+---
+
+### Task 4: Happiness vs Population
+
+- Create a scatter plot of:
+  - Happiness score vs Population
+- Check for any visible trends or correlations
+
+> Tip: Use logarithmic scale if population sizes vary widely
+
+---
+
+### Task 5: Explore Other Variables
+
+- Examine possible relationships between happiness score and:
+  - GDP per capita
+  - Social support
+  - Healthy life expectancy
+  - Freedom to make life choices
+  - Generosity
+  - Perceptions of corruption
+
+Steps:
+
+- Use correlation analysis or scatter plots
+- Identify which variable(s) show the strongest relationship with happiness
 
 ---
 
 ## Final Checks
 
-- [ ] Average age calculated  
-- [ ] Highest fare payers identified  
-- [ ] Embarkation percentages calculated  
-- [ ] Survival analysed by family size  
-- [ ] Survival analysed by passenger class  
-- [ ] Survival analysed by gender  
-- [ ] Survival analysed by age  
-- [ ] Charts/tables created and clearly labelled  
-- [ ] Insights summarised in brief comments or bullet points
+- [ ] Year-over-year comparisons complete  
+- [ ] UK score compared to global average  
+- [ ] G7 scores analysed  
+- [ ] Population correlation visualised  
+- [ ] Other variables reviewed for correlation  
+- [ ] Summary of findings written  
+- [ ] Final file saved and ready for submission
